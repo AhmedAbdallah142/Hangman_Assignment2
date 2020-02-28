@@ -104,7 +104,7 @@ public class Game_methods implements IHangman {
 					System.out.println("\nWow !!!!!! you won the game");break;
 				}
 			}
-			System.out.println("Are you want to play again ? [y,n]");
+			System.out.println("Do you want to play again ? [y,n]");
 			check=s.next().charAt(0);
 		}
 		s.close();
@@ -113,10 +113,10 @@ public class Game_methods implements IHangman {
 	
 	public boolean buggyWords(String buggy) {
 		for (int i=0;i<buggy.length();i++) {
-			if (!Character.isLetter(buggy.charAt(i))|| buggy.charAt(i)!='-') {
-				return false;
+			if (!Character.isLetter(buggy.charAt(i)) && buggy.charAt(i)!='-') {
+				return true;
 			}
 		}
-		return true ;
+		return false ;
 	}
 }
