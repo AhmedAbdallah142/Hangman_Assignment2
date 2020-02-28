@@ -84,10 +84,16 @@ public class Game_methods implements IHangman {
 			for (int i=0;i<20;i++)System.out.println();
 			while (true) { 
 				if (x==0) {
+					try {
 					for (int i=0;i<secWord.length();i++)System.out.print('-');
 					System.out.println("\t\t"+maxWrong+" Attempts Left");
 					x++;
+					}catch (Exception e) {
+						System.out.println("error in choosing the word from dictionary please insert the correct dictionary file then play again");
+						break;
 				}
+				}
+				
 				System.out.println("please enter the character that might be in the word :");
 				c=s.next().toLowerCase().charAt(0); //the program is case sensitivity but it's free to enter upper or lower case character
 				for (int i=0;i<50;i++)System.out.println();
