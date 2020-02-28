@@ -22,7 +22,7 @@ public class Game_methods implements IHangman {
 
 	@Override
 	public String selectRandomSecretWord() {
-		int r =(int)(Math.random()*41239);
+		int r =(int)(Math.random()*dicLength );
 		return secwords[r];
 	}
 
