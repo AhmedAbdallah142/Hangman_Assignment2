@@ -31,10 +31,13 @@ public class Game_methods implements IHangman {
 		int temp;
 		String tempWord;
 		temp = secWord.indexOf(c);
-		if (this.buggyWords(secWord)) {//checking is the secret word is a buggy word
+		if (this.buggyWords(secWord)) {//checking is the secret word from the dictionary is a buggy word
 			throw new Exception("this is a buggy word");
 		}
-		if (temp==-1) {
+		if (!Character.isLetter(c)) {//check if the user didn't enter an english character
+			System.out.println("you must enter an english character");
+		}
+		else if (temp==-1) {
 			maxWrong--;
 		}
 		if (maxWrong <= 0) {
